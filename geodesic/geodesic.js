@@ -26,7 +26,8 @@
         coordinates: subdivideFaces(~~n).map(function(face) {
           face = face.map(project);
           face.push(face[0]);
-          return [face];
+          face = [face];
+          return face;
         })
       };
     },
@@ -70,8 +71,8 @@
         for (var j = 0; j < i; ++j) {
           faces.push([
             i1(j / i),
-            i1((j + 1) / i),
-            i2((j + 1) / (i + 1))
+            i2((j + 1) / (i + 1)),
+            i1((j + 1) / i)
           ]);
         }
       }
